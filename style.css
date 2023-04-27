@@ -31,14 +31,13 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   list-style: none;
   font-family: Grandstander;
 }
 
 body,
 html {
-  width: 100%;
   font-size: 10px;
   color: var(--text-color);
   font-weight: normal;
@@ -263,6 +262,8 @@ a::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: -15%;
+  padding: 10%
 }
 
 .text-border:hover {
@@ -300,6 +301,7 @@ a::after {
   height: 34px;
   right: 7px;
   top: 7px;
+  z-index: 1;
 }
 
 /* Hide default HTML checkbox */
@@ -368,31 +370,88 @@ input:checked+.slider:before {
 
 #hero-banner {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background: url(/assets/img/moutain-background.png) center/cover no-repeat;
-  filter: sepia(19%) brightness(106%) hue-rotate(15deg) saturate(639%) drop-shadow(4px 29px 5px #000000);
-  -webkit-filter: sepia(19%) brightness(106%) hue-rotate(15deg) saturate(639%) drop-shadow(4px 29px 5px #000000);
-  -moz-filter: sepia(19%) brightness(106%) hue-rotate(15deg) saturate(639%) drop-shadow(4px 29px 5px #000000);
+  overflow: clip;
+  position: inherit;
+  z-index: 1;
 }
 
 .hero-banner-title {
-  width: 80vw;
-  height: 249px;
+  width: 60vw;
+  height: 40vh;
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 9%;
-  top: 4%;
-  background: rgba(0, 0, 0, 0.397);
-  border-radius: 200px 200px 30px 30px;
-  padding: 9%;
-  border: 2px solid white;
+  flex-direction: column;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 
 .hero-banner-title h1 {
   font-weight: bold;
-  font-size: 7vmin;
+  font-size: 8rem;
   color: rgb(255, 255, 255);
   text-align: center;
   text-shadow: 2px 5px 0 black;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  letter-spacing: 2.8px;
+  word-spacing: 4.4px;
+}
+
+.hero-banner-title p {
+  color: white;
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.hero-banner-title h1 span {
+  position: relative;
+  pointer-events: auto;
+}
+
+
+.hero-banner-image {
+  background: url(/assets/img/sofiane-removebg-preview.png) no-repeat bottom;
+  background-size: contain;
+  height: 100vh;
+  width: 60vw;
+  position: absolute;
+  left: 40%;
+  bottom: -1.6%;
+}
+
+/* PROJECT */
+
+#projet-section {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(0, 127, 118);
+  background: linear-gradient(180deg, rgba(0, 127, 118, 1) 0%, rgba(0, 102, 98, 1) 31%, rgba(0, 74, 76, 1) 62%, rgba(0, 36, 51, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#projet-section h1 {
+  color: white;
+  font-size: 2rem;
+}
+
+
+#canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+/* BOUNCY + HOVER */
+
+.insertClass {
+  color: red;
 }
